@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="head">
+    <div class="title">
+      <pre>    ROCK 
+    PAPER
+    SCISSORS
+      </pre>
+    </div>
+    <div class="score">
+      <div class="box_score">
+        <div class="heading">COMPUTER<br>SCORE</div>
+        <div class="size" id="computer-score">0</div>
+      </div>
+
+      <div class="box_score">
+        <div class="heading">YOUR<br>SCORE </div>
+        <div class="size" id="player-score">0</div>
+      </div>
+    </div>
+  </div>
+  <div id="triangle">
+    <div class="tri"></div>
+    <div class="line"></div>
+    <div class="choice" id="rock" onclick="playGame('rock')"></div>
+    <div class="choice" id="scissors" onclick="playGame('scissors')"></div>
+    <div class="choice" id="paper" onclick="playGame('paper')"></div>
+  </div>
+  <div id="result" style="display: none;">
+    <div id="player-choice">
+      <h3>YOU PICKED</h3>
+      <div class="choice" id="player-picked"></div>
+    </div>
+    <div id="computer-choice">
+      <h3>PC PICKED</h3>
+      <div class="choice" id="computer-picked"></div>
+    </div>
+    <h2 id="result-text"></h2>
+    <h5 id="against_pc">AGAINST PC</h5>
+    <button id="play-again" onclick="playAgain()">PLAY AGAIN</button>
+    <button id="replay" onclick="playAgain()">REPLAY</button>
+  </div>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Game Rules</h2>
+      <ul>
+        <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+        <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”
+        </li>
+        <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time.</li>
+        <li>If both players lay down the same hand, each player lays down another hand.</li>
+      </ul>
+    </div>
+  </div>
+  <button id="rules-button" onclick="openModal()">RULES</button>
+  <button id="next-button" onclick="nextpage()" style="display: block;">Next</button>
+  <div id="winning-screen" style="display: none;">
+    <div id="image">
+      <img class="star" src="Group 5.png">
+      <img class="cup" src="Vector.png">
+    </div>
+    <div class="content">
+      <h1>HURRAY!!</h1>
+      <p>YOU WON THE GAME</p>
+      <button id="play-again-winning" onclick="playAgainWinning()">PLAY AGAIN</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>

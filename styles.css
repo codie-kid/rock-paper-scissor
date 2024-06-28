@@ -1,0 +1,353 @@
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(140, 196, 97);
+}
+
+#head {
+    position: relative;
+    border: 2px solid white;
+    width: 60%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0 0 290px;
+    border-radius: 20px;
+}
+
+.title pre {
+    color: white;
+    font-size: 35px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    padding: 40px 0 0 20px;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-right: 20px;
+}
+
+.box_score {
+    background-color: white;
+    width: 130px;
+    height: 120px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.heading {
+    color: #656565;
+    font-size: 18px;
+    font-weight: 10px;
+}
+
+.size {
+    font-size: 65px;
+    font-weight: bolder;
+}
+
+#triangle {
+    width: 500px;
+    height: 400px;
+    display: grid;
+    grid-template-areas: 'rock scissor'
+        'paper paper';
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.tri {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    border: 12px solid rgb(51, 71, 35);
+    top: 270px;
+    transform: rotate(45deg);
+    border-top: none;
+    border-left: none;
+}
+
+.line {
+    position: absolute;
+    border: 7px solid rgb(51, 71, 35);
+    width: 200px;
+    top: 330px;
+}
+
+.choice {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    align-items: center;
+    cursor: pointer;
+}
+
+#rock {
+    border: 15px solid rgb(0, 116, 182);
+    grid-area: rock;
+}
+
+#scissors {
+    border: 15px solid rgb(189, 0, 255);
+    grid-area: scissor;
+}
+
+#paper {
+    border: 15px solid rgb(255, 169, 67);
+    grid-area: paper;
+}
+
+.choice::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#rock::after {
+    background-image: url('icon_rock.png');
+}
+
+#scissors::after {
+    background-image: url('icon_scissor.png');
+}
+
+#paper::after {
+    background-image: url('icon_paper.png');
+}
+
+#result .choice {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 15px solid transparent;
+    background-color: white;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#result {
+    margin: 100px 0 0 150px;
+}
+
+#result #player-choice,
+h3,
+#result #computer-choice,
+h3 {
+    color: white;
+    margin-left: 28px;
+    margin-bottom: 40px;
+}
+
+#result #player-choice,
+#result #computer-choice {
+    display: inline-block;
+    margin: -10px 215px;
+}
+
+
+#result-text {
+    margin: -80px 0 0 480px;
+    color: white;
+    font-size: 50px;
+    letter-spacing: 5px;
+}
+
+#against_pc {
+    color: white;
+    font-size: 28px;
+    margin: 0 0 0 510px;
+}
+
+#play-again {
+    border: none;
+    background-color: white;
+    color: #656565;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 150px;
+    margin: 10px 0 0 510px;
+    cursor: pointer;
+}
+
+#replay {
+    border: none;
+    background-color: white;
+    color: #656565;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 150px;
+    margin: 14px 0 0 525px;
+    cursor: pointer;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    right: 25px;
+    top: 200px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: rgb(0, 68, 41);
+    margin: 15% auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 350px;
+    border-radius: 10px;
+    border: 6px solid white;
+    color: white;
+
+}
+
+.modal-content h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.modal-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-content ul li {
+    position: relative;
+    font-size: 15px;
+    margin: 15px;
+    padding-left: 25px;
+
+}
+
+.modal-content ul li::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    transform: translateY(50%);
+    width: 10px;
+    height: 10px;
+    background-color: yellow;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    top: -30px;
+    right: -14px;
+    background-color: red;
+    border-radius: 50%;
+    border: 6px solid white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#winning-screen {
+    margin-top: 80px;
+    text-align: center;
+}
+
+#image {
+    margin-bottom: -25px;
+}
+
+.star {
+    height: 320px;
+    width: 35%;
+    margin-left: -140px;
+}
+
+.cup {
+    height: 200px;
+    margin: 60px 0 -10px -370px;
+}
+
+#winning-screen,
+h1,
+p{
+    color: white;
+}
+
+#winning-screen,
+h1 {
+    font-size: 80px;
+    letter-spacing: 7px;
+    margin-bottom: -25px;
+
+}
+
+#winning-screen,
+p {
+    font-size: 32px;
+}
+
+#play-again-winning {
+    border: none;
+    background-color: white;
+    color: #656565;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 150px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+#rules-button {
+    position: absolute;
+    bottom: 20px;
+    right: 150px;
+    background: none;
+    border: 3px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+#next-button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 110px;
+    background: none;
+    border: 3px solid white;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 9px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
